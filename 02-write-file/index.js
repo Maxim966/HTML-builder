@@ -21,6 +21,7 @@ fs.access('text.txt', fs.constants.F_OK, (error) => {
     if (input === 'exit') {
       console.log('Adding text to file stopped. Bye!');
       rl.close();
+      return;
     }
     fs.appendFile(path.join(__dirname, 'text.txt'), input + '\n', (err) => {
       if (err) throw err;
